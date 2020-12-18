@@ -1,0 +1,28 @@
+﻿@page "/"
+
+
+@using MySleep.Pages
+
+<h1 style="font-size:1.5em;">Brent's Oura Ring Sleep Downloader</h1>
+
+<p>This app downloads sleep data from your Oura Ring.</p>
+<hr />
+<label for="startDate">Start date:</label>
+<input id="startDate" type="text" @bind="@startDate" style="width:100px;" />
+&nbsp;&nbsp;&nbsp;
+<label for="endDate">End date:</label>
+<input id="endDate" type="text" @bind="@endDate" style="width:100px;" />
+&nbsp;&nbsp;&nbsp;
+<input type="button" id="getSleepData" value="Get Sleep Data" @onclick="getSleepDataOnClick" />
+<hr />
+<input id="txtResultsToday" type="text" readonly style="width:50%; min-width:500px; background-color:Scrollbar;" value="@SleepDataToday" />
+<input type="button" onclick="copyText('txtResultsToday')" value="Copy Today" style="margin-left:6px;" />
+<div style="width:50%; min-width:500px; text-align:center;">
+    &diams;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &diams;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &diams;
+</div>
+<span>
+    <textarea id="txtResultsAll" readonly style="width: 50%; min-width:500px; float:left; background-color: Scrollbar; overflow-y:auto;" rows="8">@SleepData</textarea>    
+    <input type="button" onclick="copyText('txtResultsAll')" value="Copy All Days" style="float: left; margin-left: 10px;" />
+</span>

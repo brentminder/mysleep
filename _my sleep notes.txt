@@ -1,0 +1,19 @@
+https://cloud.ouraring.com/oauth/applications/HIP346KLUSLHPBDI
+
+Oura Ring API:
+
+Client ID	HIP346KLUSLHPBDI
+Client Secret	WBO3L2WJFUZVCGCKN6RC62WWNO2GTMZO
+
+--
+AUTHORIZATION URLS
+Example Authorization URLs for the application.
+
+SERVER-SIZE FLOW AUTHORIZATION URL
+https://cloud.ouraring.com/oauth/authorize?client_id=HIP346KLUSLHPBDI&state=XXX&redirect_uri=https%3A%2F%2Fxxxxxxx.tld%2Fpath&response_type=code
+
+CLIENT-SIZE FLOW AUTHORIZATION URL
+https://cloud.ouraring.com/oauth/authorize?client_id=HIP346KLUSLHPBDI&state=XXX&redirect_uri=https%3A%2F%2Fxxxxxxx.tld%2Fpath&response_type=token
+
+
+--
