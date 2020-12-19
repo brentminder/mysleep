@@ -17,3 +17,4 @@ https://cloud.ouraring.com/oauth/authorize?client_id=HIP346KLUSLHPBDI&state=XXX&
 
 
 --
+2020-12-18 ver 1.0 complete
