@@ -13,7 +13,14 @@
 <label for="endDate">End date:</label>
 <input id="endDate" type="text" @bind="@endDate" style="width:100px;" />
 &nbsp;&nbsp;&nbsp;
-<input type="button" id="getSleepData" value="Get Sleep Data" @onclick="getSleepDataOnClick" />
+<input type="button" id="getSleepData" value="Get Sleep Data" @onclick="getSleepDataOnClick" />&nbsp;&nbsp;&nbsp;
+<label>
+    <input type="radio" name="whoDat" checked="@(who == 1)" @onchange="@(() => { who = 1; })" value="@who" />&nbsp;Brent
+</label>
+&nbsp;&nbsp;&nbsp;
+<label>
+    <input type="radio" name="whoDat" checked="@(who == 2)" @onchange="@(() => { who = 2; })" value="@who"  />&nbsp;Sabrina
+</label>
 <hr />
 <input id="txtResultsToday" type="text" readonly style="width:50%; min-width:500px; background-color:Scrollbar;" value="@SleepDataToday" />
 <input type="button" onclick="copyText('txtResultsToday')" value="Copy Today" style="margin-left:6px;" />
@@ -23,6 +30,6 @@
     &diams;
 </div>
 <span>
-    <textarea id="txtResultsAll" readonly style="width: 50%; min-width:500px; float:left; background-color: Scrollbar; overflow-y:auto;" rows="8">@SleepData</textarea>    
+    <textarea id="txtResultsAll" readonly style="width: 50%; min-width:500px; float:left; background-color: Scrollbar; overflow-y:auto;" rows="8">@SleepData</textarea>
     <input type="button" onclick="copyText('txtResultsAll')" value="Copy All Days" style="float: left; margin-left: 10px;" />
 </span>

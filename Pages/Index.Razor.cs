@@ -14,12 +14,14 @@ namespace MySleep.Pages
     public partial class Index
     {
         public string Title = "Test";
-
+                                
         public static string SleepData, SleepDataToday = "";
 
-        public string token = "735Q5REGAV3BLINQSNV5GX4T4ZRJDW2Y";
+        public string tokenBrent = "735Q5REGAV3BLINQSNV5GX4T4ZRJDW2Y";
+        public string tokenSabrina = "HTE4B2UTXFYIH5C52U6ETLNPKVHWXEN5";
         public string startDate = "";
         public string endDate = "";
+        public int who = 1;
         private const string dateFormat = "yyyy-MM-dd";
 
         protected override async Task OnInitializedAsync()
@@ -35,8 +37,9 @@ namespace MySleep.Pages
         public async Task getSleepDataOnClick()
         {
             {
+                var tokenSelected = who == 1 ? tokenBrent : tokenSabrina;
                 var startDateMinusOne = DateTime.Parse(startDate).AddDays(-1).ToString(dateFormat);
-                var uri = $"https://api.ouraring.com/v1/sleep?start={startDateMinusOne}&end={endDate}&access_token={token}";
+                var uri = $"https://api.ouraring.com/v1/sleep?start={startDateMinusOne}&end={endDate}&access_token={tokenSelected}";
                 try
                 {
                     var httpClient = new HttpClient();
