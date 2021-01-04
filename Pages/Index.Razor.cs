@@ -59,8 +59,11 @@ namespace MySleep.Pages
                         //                      Date       |     Sleep Score    |     Total Sleep Time    |       Time In Bed     |     Disturbances          |    Sleep Start Time      |     Sleep End Time      |     REM(mins)    |     Deep(mins)    |      Latency(mins)  
                         row = sleep.SleepDate + "\t" + sleep.Score + "\t" + sleep.TotalSleep + "\t" + sleep.Duration + "\t" + sleep.Disturbances + "\t" + sleep.BedtimeStart + "\t" + sleep.BedtimeEnd + "\t" + sleep.Rem + "\t" + sleep.Deep + "\t" + sleep.Latency;
                         rows.AppendLine(row);
+                        if (DateTime.Now.Subtract(raw.bedtime_end).TotalHours < 24) {
+                            SleepDataToday = row;
+                        }
                     }
-                    SleepDataToday = row;
+                    
                     SleepData = rows.ToString();                    
                 }
                 catch (Exception ex)
